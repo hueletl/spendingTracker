@@ -1,0 +1,7 @@
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Summary Spending"><app-summary-spending></app-summary-spending></mat-tab>
+    <mat-tab label="View/Edit Transactions"><app-transactions-list></app-transactions-list></mat-tab>
+</mat-tab-group>
+
+
+<router-outlet></router-outlet>

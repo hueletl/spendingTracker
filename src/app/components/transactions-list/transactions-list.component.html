@@ -1,0 +1,50 @@
+<div class="TransactionsListContainer">
+    <div class="AddTransactionButtonContainer">
+        <button mat-raised-button class="AddTransactionButton" (click)="addTransaction()">Add Transaction</button>
+    </div>
+  <table class="Table mat-elevation-z8" *ngIf="transactions.length > 0; else noTransactions">
+    <caption class="TableTitle" >Spending Transactions</caption>
+    <thead class="TableHeaderContainer" >
+      <th class="TableHeader">Category</th>
+      <th class="TableHeader">Amount</th>
+      <th class="TableHeader">Paid By</th>
+      <th class="TableHeader">On Behalf Of</th>
+      <th class="TableHeader">Payment Type</th>
+      <th class="TableHeader">Company</th>
+      <th class="TableHeader">Due Date</th>
+      <th class="TableHeader">Date Paid</th>
+      <th class="TableHeader">Date Applied To</th>
+      <th class="TableHeader">Comments</th>
+      <th class="TableHeader">Actions</th>
+
+    </thead>
+    <tbody class="TableRowContainer">
+      <tr class="TableRow" *ngFor="let transaction of transactions;">
+        <td class="TableCell" *ngFor="let att of [
+          transaction.category,
+          transaction.amount,
+          transaction.payee,
+          transaction.on_behalf_of,
+          transaction.payment_type,
+          transaction.company,
+          transaction.date_due,
+          transaction.date_paid,
+          transaction.date_apply_to,
+          transaction.comments,
+          ];">{{ format(att)}}</td>
+        <td class="TableCell ButtonContainer">
+          <button class="EditButton" (click)="editTransaction(transaction)">
+            <mat-icon class="EditIcon">edit</mat-icon>
+          </button>
+          <button class="DeleteButton" (click)="deleteTransaction(transaction.id)">
+            <mat-icon class="DeleteIcon">delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noTransactions>
+    <h5>There are no Transactions. Please enter a transaction.</h5>
+</ng-template>

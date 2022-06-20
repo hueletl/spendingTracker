@@ -1,0 +1,12 @@
+<h1 mat-dialog-title class="FormTitle">Adding New Item to {{data.list}}</h1>
+<mat-dialog-content class="InputContainer">
+    <mat-form-field class="Input">
+        <mat-label>{{data.list}}</mat-label>
+        <input matInput type="text" [(ngModel)]="item">
+        <mat-hint>Ex: Internet</mat-hint>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="ButtonContainer">
+    <button mat-raised-button mat-dialog-close class="SubmitButton" (click)="addToList();">Submit</button>
+    <button mat-raised-button mat-dialog-close class="CancelButton">Cancel</button>
+</mat-dialog-actions>

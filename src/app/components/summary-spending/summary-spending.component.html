@@ -1,0 +1,44 @@
+<div class="SummaryContainer">
+  <div class="HeaderContainer">
+    <div>
+      <h1 class="Header">{{choosenYear}} Summary</h1>
+      <h2 class="Header SubHeader">Total: ${{grandTotal}}</h2>
+    </div>
+    <div class="SelectYearContainer">
+      <mat-form-field class="Input">
+        <mat-label>Select a different year</mat-label>
+        <mat-select [(value)]="choosenYear" (selectionChange)="updateData()">
+            <mat-option *ngFor="let year of yearsList;" [value]="year">{{year}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  
+  <div class="CanvasContainer">
+    
+    <canvas baseChart class="Canvas"
+      [labels]="monthLabels"
+      [datasets]="monthDatasets"
+      [options]="options">
+    </canvas>
+    <canvas baseChart class="Canvas"
+      [labels]="usersLabels"
+      [datasets]="usersDatasets"
+      [options]="options">
+    </canvas>
+    <canvas baseChart class="Canvas"
+      [labels]="categoryLabels"
+      [datasets]="categoryDatasets"
+      [options]="options">
+    </canvas>
+    <h2 class="Header SubHeader">Individual User spending</h2>
+    <div *ngFor="let index of arrayFromRange(0,usersLabels.length-1, 'descending')">
+      <canvas id=`Canvas${index}` baseChart class="Canvas"
+      [labels]="categoryLabels"
+      [datasets]="userDatasets[index]"
+      [options]="options"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>

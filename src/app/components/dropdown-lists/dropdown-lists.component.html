@@ -1,0 +1,93 @@
+<div class="DropdownListContainer">
+  <table class="Table mat-elevation-z8" >
+    <tr class="HeaderContainer">
+        <th class="TableHeader">Categories</th>
+    </tr>
+    <tr class="TableColumn">
+        <td class="Row" *ngFor="let element of categories;">{{element}}
+            <div class="ButtonContainer">
+                <button class="EditButton" (click)="editElemInList('category', element)">
+                    <mat-icon class="EditIcon">edit</mat-icon>
+                </button>
+                <button class="DeleteButton" (click)="deleteElemFromList('category', element)">
+                    <mat-icon class="DeleteIcon">delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </tr>
+    <tr class="ButtonContainer">
+        <button mat-raised-button class="AddButton" (click)="addToList('category')">
+            <mat-icon mat-button class="AddIcon">add</mat-icon>
+        </button>
+    </tr>
+  </table>
+
+  <table class="Table mat-elevation-z8" >
+    <tr class="HeaderContainer">
+        <th class="TableHeader">Users</th>
+    </tr>
+    <tr class="TableColumn">
+        <td class="Row" *ngFor="let element of userNames;">{{element}}
+            <div class="ButtonContainer">
+                <button class="EditButton" (click)="editElemInList('user', element)">
+                    <mat-icon class="EditIcon">edit</mat-icon>
+                </button>
+                <button class="DeleteButton" (click)="deleteElemFromList('user', element)">
+                    <mat-icon class="DeleteIcon">delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </tr>
+    <tr class="ButtonContainer">
+        <button mat-raised-button class="AddButton" (click)="addToList('user')">
+            <mat-icon mat-button class="AddIcon">add</mat-icon>
+        </button>
+    </tr>
+  </table>
+
+  <table class="Table mat-elevation-z8" >
+    <tr class="HeaderContainer">
+        <th class="TableHeader">Payment Types</th>
+    </tr>
+    <tr class="TableColumn">
+        <td class="Row" *ngFor="let element of paymentTypes;">{{element}}
+            <div class="ButtonContainer">
+                <button class="EditButton" (click)="editElemInList('payment', element)">
+                    <mat-icon class="EditIcon">edit</mat-icon>
+                </button>
+                <button class="DeleteButton" (click)="deleteElemFromList('payment', element)">
+                    <mat-icon class="DeleteIcon">delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </tr>
+    <tr class="ButtonContainer">
+        <button mat-raised-button class="AddButton" (click)="addToList('payment')">
+            <mat-icon mat-button class="AddIcon">add</mat-icon>
+        </button>
+    </tr>
+  </table>
+
+  <table class="Table mat-elevation-z8" >
+    <tr class="HeaderContainer">
+        <th class="TableHeader">Companies</th>
+    </tr>
+    <tr class="TableColumn">
+        <td class="Row" *ngFor="let element of companyNames;">{{element}}
+            <div class="ButtonContainer">
+                <button class="EditButton" (click)="editElemInList('company', element)">
+                    <mat-icon class="EditIcon">edit</mat-icon>
+                </button>
+                <button class="DeleteButton" (click)="deleteElemFromList('company', element)">
+                    <mat-icon class="DeleteIcon">delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </tr>
+    <tr class="ButtonContainer">
+        <button mat-raised-button class="AddButton" (click)="addToList('company')">
+            <mat-icon mat-button class="AddIcon">add</mat-icon>
+        </button>
+    </tr>
+  </table>
+</div>

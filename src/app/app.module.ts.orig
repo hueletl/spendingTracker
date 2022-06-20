@@ -15,15 +15,6 @@ import { environment } from '../environments/environment';
 import { FirestoreService } from './services/firestore/firestore.service';
 import { EditTransactionComponent } from './components/edit-transaction/edit-transaction.component';
 import { SummarySpendingComponent } from './components/summary-spending/summary-spending.component';
-import { DropdownListsComponent } from './components/dropdown-lists/dropdown-lists.component';
-import { AddToDropdownListComponent } from './components/add-to-dropdown-list/add-to-dropdown-list.component';
-import { EditElementInDropdownListComponent } from './components/edit-element-in-dropdown-list/edit-element-in-dropdown-list.component';
-import { Ng2ChartsModule } from './imports/angular-material/ng2-charts';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { LandingComponent } from './components/landing/landing.component';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [
@@ -31,19 +22,11 @@ import { HotToastModule } from '@ngneat/hot-toast';
     AddTransactionComponent,
     TransactionsListComponent,
     EditTransactionComponent,
-    SummarySpendingComponent,
-    DropdownListsComponent,
-    AddToDropdownListComponent,
-    EditElementInDropdownListComponent,
-    NavbarComponent,
-    LandingComponent,
-    LoginComponent,
-    HomeComponent
+    SummarySpendingComponent
   ],
   entryComponents: [
     AddTransactionComponent,
     EditTransactionComponent,
-    AddToDropdownListComponent,
   ],
   imports: [
     AngularMaterialModule,
@@ -51,12 +34,10 @@ import { HotToastModule } from '@ngneat/hot-toast';
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    Ng2ChartsModule,
     provideAuth(() => getAuth()),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    HotToastModule.forRoot()
+    provideStorage(() => getStorage())
   ],
   providers: [
     FirestoreService

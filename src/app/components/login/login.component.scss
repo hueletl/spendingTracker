@@ -1,0 +1,26 @@
+.LoginContainer{
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    background: #eceff1;
+    padding: 48px;
+    border-radius: 16px;
+    margin-top: 3%;
+
+}
+.LoginContainer mat-form-field{
+    width: 100%
+}
+.LoginButton{
+    background-color: rgb(0, 235, 235);
+}
+.Center {
+    display: flex;
+    justify-content: center;
+}
+.MarginTop{
+    margin-top: 16px;
+}
+.TextCenter{
+    text-align: center;
+}

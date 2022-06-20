@@ -1,0 +1,20 @@
+@import "../add-transaction/add-transaction.component.scss";
+
+.HeadingContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.ButtonContainer{
+    display: flex;
+    justify-content: flex-start;
+}
+.UpdateButton{
+    color: green;
+}
+.CancelButton{
+    color: #202020;
+}
+.DeleteButton{
+    color: red;
+    height: fit-content;
+}

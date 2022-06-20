@@ -1,0 +1,73 @@
+<h1 mat-dialog-title class="FormTitle">New Transaction</h1>
+<mat-dialog-content class="InputContainer">
+    <mat-form-field class="Input">
+        <mat-label>Category</mat-label>
+        <mat-select [(value)]="transaction.category">
+            <mat-option>Blank</mat-option>
+            <mat-option *ngFor="let category of categories;" [value]="category" >{{category}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Paid Amount</mat-label>
+        <input matInput type="text" [(ngModel)]="transaction.amount">
+        <mat-hint>Ex: 99.99</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Paid By</mat-label>
+        <mat-select [(value)]="transaction.payee">
+            <mat-option>Blank</mat-option>
+            <mat-option *ngFor="let name of peopleNames;" [value]="name">{{name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>On Behalf Of</mat-label>
+        <mat-select [(value)]="transaction.on_behalf_of">
+            <mat-option>Blank</mat-option>
+            <mat-option *ngFor="let name of peopleNames;" [value]="name">{{name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Payment Type</mat-label>
+        <mat-select [(value)]="transaction.payment_type">
+            <mat-option>Blank</mat-option>
+            <mat-option *ngFor="let type of paymentTypes;" [value]="type">{{type}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Company</mat-label>
+        <mat-select [(value)]="transaction.company">
+            <mat-option>Blank</mat-option>
+            <mat-option *ngFor="let name of companyNames;" [value]="name">{{name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Due Date</mat-label>
+        <input matInput [matDatepicker]="picker3" [(ngModel)]="transaction.date_due">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Date Paid</mat-label>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="transaction.date_paid">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Date Apply To</mat-label>
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="transaction.date_apply_to">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="Input">
+        <mat-label>Comments</mat-label>
+        <textarea matInput type="text" [(ngModel)]="transaction.comments"></textarea>
+        <mat-hint>add comment</mat-hint>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="ButtonContainer">
+    <button mat-raised-button mat-dialog-close class="SubmitButton" (click)="addTransaction();">Submit</button>
+    <button mat-raised-button mat-dialog-close class="CancelButton">Cancel</button>
+</mat-dialog-actions>

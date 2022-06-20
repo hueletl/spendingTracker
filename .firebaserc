@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-demo-1f434": {
+      "hosting": {
+        "spendingApp": [
+          "hueletl"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-demo-1f434"
+  }
+}
